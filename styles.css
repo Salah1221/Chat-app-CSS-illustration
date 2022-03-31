@@ -56,6 +56,7 @@ img {
   flex-direction: column;
   justify-content: center;
   position: relative;
+  overflow: hidden;
 }
 .right-section::after {
   content: "";
@@ -108,7 +109,6 @@ img {
     0 4px 4px rgba(0, 0, 0, 0.04), 0 8px 8px rgba(0, 0, 0, 0.04),
     0 16px 16px rgba(0, 0, 0, 0.04), 0 32px 32px rgba(0, 0, 0, 0.04);
   border-radius: 30px;
-  overflow: hidden;
   padding: 10px;
   position: absolute;
   right: 60px;
@@ -120,11 +120,12 @@ img {
   height: 100%;
   width: 100%;
   border-radius: 25px;
-  overflow: hidden;
 }
 .top-bar {
   background: var(--gradient-2);
   border-radius: 10px;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
   display: flex;
   height: 80px;
   padding: 10px;
@@ -204,6 +205,21 @@ img {
   border-radius: 13px;
   border-bottom-left-radius: 5px;
   margin-bottom: 10px;
+  animation: sam-message-fade-in 0.4s forwards;
+  transform: translateY(10px);
+  opacity: 0;
+}
+.chat-part :nth-child(2) {
+  animation-delay: 0.4s;
+}
+.chat-part :nth-child(6) {
+  animation-delay: calc(5 * 0.4s);
+}
+.chat-part :nth-child(7) {
+  animation-delay: calc(0.4s * 6);
+}
+.chat-part :nth-child(8) {
+  animation-delay: calc(0.4s * 7);
 }
 .chat-part .radio {
   background: var(--gradient-1);
@@ -245,12 +261,22 @@ img {
   margin-left: 85px;
   border-radius: 13px;
   border-bottom-right-radius: 5px;
+  transform: translateY(10px);
+  opacity: 0;
+  animation: sam-message-fade-in 0.4s calc(3 * 0.4s) forwards;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.04);
+}
+.chat-part .my-message:not(.imgs).small {
+  animation-delay: calc(4 * 0.4s);
 }
 .chat-part .my-message.imgs {
   display: flex;
   justify-content: flex-end;
   align-items: center;
   padding-top: 10px;
+  transform: translateY(10px);
+  opacity: 0;
+  animation: sam-message-fade-in 0.4s calc(2 * 0.4s) forwards;
 }
 .chat-part .my-message.imgs img {
   margin-left: 10px;
@@ -301,17 +327,34 @@ img {
   );
 }
 /* End Phone */
+/* Animations */
+@keyframes sam-message-fade-in {
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+/* End Animations */
 /* Media Query */
 @media (max-width: 950px) {
   body {
     flex-direction: column;
   }
+  .left-section {
+    height: 650px;
+  }
   .right-section,
   .left-section {
     width: 100%;
+    padding: 0;
   }
   .right-section {
     align-items: center;
+    justify-content: flex-end;
   }
   .right-section h1 {
     font-size: 38px;
@@ -325,8 +368,8 @@ img {
     padding-right: 30px;
   }
   .left-section::before {
-    left: -300px;
-    top: -150px;
+    left: -350px;
+    top: -200px;
   }
   .right-section::after {
     right: -340px;
@@ -336,7 +379,7 @@ img {
   .phone {
     right: 50%;
     transform: translate(50%, -50%) scale(0.8);
-    top: 40%;
+    top: 50%;
   }
 }
 /* End Media Query */
