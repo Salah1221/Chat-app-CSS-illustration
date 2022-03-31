@@ -48,6 +48,9 @@ span {
 img {
   width: 50px;
 }
+::selection {
+  background-color: hsla(293, 100%, 63%, 0.2);
+}
 /* End Global Rules */
 /* Right Section */
 .right-section {
@@ -56,7 +59,6 @@ img {
   flex-direction: column;
   justify-content: center;
   position: relative;
-  overflow: hidden;
 }
 .right-section::after {
   content: "";
@@ -85,7 +87,6 @@ img {
   display: flex;
   align-items: center;
   height: 100vh;
-  padding-left: 100px;
   position: relative;
   overflow: hidden;
 }
@@ -350,7 +351,6 @@ img {
   .right-section,
   .left-section {
     width: 100%;
-    padding: 0;
   }
   .right-section {
     align-items: center;
@@ -374,7 +374,7 @@ img {
   .right-section::after {
     right: -340px;
     bottom: -50px;
-    height: 700px;
+    height: 500px;
   }
   .phone {
     right: 50%;
@@ -391,6 +391,18 @@ img {
   transform: translateX(-50%);
   font-size: 11px;
   text-align: center;
+}
+.attribution a {
+  text-decoration: none;
+  font-weight: 500;
+  background-color: hsl(264, 100%, 61%);
+  background-image: var(--gradient-1);
+  background-size: 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
 }
 /* End Attribution */
 /* Font Faces */
