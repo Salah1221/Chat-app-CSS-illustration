@@ -205,7 +205,7 @@ img {
   border-radius: 13px;
   border-bottom-left-radius: 5px;
   margin-bottom: 10px;
-  animation: sam-message-fade-in 0.4s forwards;
+  animation: message-fade-in 0.4s forwards;
   transform: translateY(10px);
   opacity: 0;
 }
@@ -263,7 +263,7 @@ img {
   border-bottom-right-radius: 5px;
   transform: translateY(10px);
   opacity: 0;
-  animation: sam-message-fade-in 0.4s calc(3 * 0.4s) forwards;
+  animation: message-fade-in 0.4s calc(3 * 0.4s) forwards;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.04);
 }
 .chat-part .my-message:not(.imgs).small {
@@ -276,7 +276,7 @@ img {
   padding-top: 10px;
   transform: translateY(10px);
   opacity: 0;
-  animation: sam-message-fade-in 0.4s calc(2 * 0.4s) forwards;
+  animation: message-fade-in 0.4s calc(2 * 0.4s) forwards;
 }
 .chat-part .my-message.imgs img {
   margin-left: 10px;
@@ -328,7 +328,7 @@ img {
 }
 /* End Phone */
 /* Animations */
-@keyframes sam-message-fade-in {
+@keyframes message-fade-in {
   from {
     transform: translateY(10px);
     opacity: 0;
