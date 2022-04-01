@@ -30,10 +30,14 @@
   font-family: "Rubik", sans-serif;
 }
 body {
+  min-height: 100vh;
+}
+main {
   display: flex;
   background-color: hsl(0, 0%, 98%);
   font-size: var(--font-size);
-  min-height: 100vh;
+  height: 100%;
+  width: 100%;
   overflow: hidden;
 }
 h1 {
@@ -343,9 +347,8 @@ img {
 /* End Animations */
 /* Media Query */
 @media (max-width: 950px) {
-  body {
+  main {
     flex-direction: column;
-    height: 903px;
   }
   .left-section {
     height: 650px;
