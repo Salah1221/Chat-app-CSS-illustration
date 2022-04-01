@@ -34,6 +34,7 @@ body {
   background-color: hsl(0, 0%, 98%);
   font-size: var(--font-size);
   min-height: 100vh;
+  overflow: hidden;
 }
 h1 {
   font-weight: 500;
@@ -353,6 +354,7 @@ img {
 @media (max-width: 950px) {
   body {
     flex-direction: column;
+    overflow: visible;
   }
   .left-section {
     height: 650px;
